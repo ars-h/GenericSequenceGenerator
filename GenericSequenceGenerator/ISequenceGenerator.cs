@@ -1,6 +1,6 @@
 namespace GenericSequenceGenerator
 {
-    public interface ISequenceGenerator<T>
+    public interface ISequenceGenerator<out T>
     {
         T Previous { get; }
 

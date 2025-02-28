@@ -2,13 +2,8 @@ using System;
 
 namespace GenericSequenceGenerator
 {
-    public class FibonacciSequenceGenerator : SequenceGenerator<int>
+    public class FibonacciSequenceGenerator(int first, int second) : SequenceGenerator<int>(first, second)
     {
-        public FibonacciSequenceGenerator(int first, int second)
-            : base(first, second)
-        {
-        }
-
         protected override int GetNext()
         {
             return this.Previous + this.Current;

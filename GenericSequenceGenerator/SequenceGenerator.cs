@@ -2,23 +2,16 @@ using System;
 
 namespace GenericSequenceGenerator
 {
-    public abstract class SequenceGenerator<T> : ISequenceGenerator<T>
+    public abstract class SequenceGenerator<T>(T first, T second) : ISequenceGenerator<T>
     {
-        private T previous;
-        private T current;
+        private T previous = first;
+        private T current = second;
 
         public T Previous => this.previous;
 
         public T Current => this.current;
 
-        public int Count { get; private set; }
-
-        protected SequenceGenerator(T first, T second)
-        {
-            this.previous = first;
-            this.current = second;
-            this.Count = 2;
-        }
+        public int Count { get; private set; } = 2;
 
         public T Next
         {

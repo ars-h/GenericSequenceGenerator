@@ -2,13 +2,8 @@ using System;
 
 namespace GenericSequenceGenerator
 {
-    public class DoubleSequenceGenerator : SequenceGenerator<double>
+    public class DoubleSequenceGenerator(double first, double second) : SequenceGenerator<double>(first, second)
     {
-        public DoubleSequenceGenerator(double first, double second)
-            : base(first, second)
-        {
-        }
-
         protected override double GetNext()
         {
             return this.Current + (this.Previous / this.Current);
